@@ -1,0 +1,7 @@
+variable "vpc_name" {
+  default = "new-test-vpc"
+}
+
+variable "vpc_cidr" {
+  default = "10.1.0.0/16"
+}
