@@ -1,5 +1,5 @@
 <!--- app-name:  -->
-# Highly available hello-world application deployment
+# Highly available hello-world application deployment using IAC
 
 ## Introduction
 This repository aims to deploy:-
@@ -28,7 +28,7 @@ This repository aims to deploy:-
 - Helm to deploy web application
 
 We will use Makefile to spin up the AWS infrastructure and deploy the application.
-You are encouraged to look into the contents of [Makefile](url)
+You are encouraged to look into the contents of [Makefile](https://github.com/rohitgujral16/webapp-hosted-on-eks-using-terraform-repeatable/blob/main/Makefile)
 ## Deploying the application
 1. Clone this repository
 ```console
