@@ -71,7 +71,9 @@ make deploy-application
 - Copy-paste the ALB in browser and you should be able to see the nginx application page
 ```
 
-![image](https://github.com/rohitgujral16/webapp-hosted-on-eks-using-terraform-repeatable/assets/40119930/afc274bc-b73b-4ccb-88af-b8ab9c3c76b8)
+![image](https://github.com/rohitgujral16/webapp-hosted-on-eks-using-terraform-repeatable/assets/40119930/4170e3c5-ed17-4319-8e29-70db17816042)
+
+
 
 
 
