@@ -19,6 +19,7 @@ help:
 
 TARGET_FILE_PATH := "modules/vpc/backend.tf" "modules/eks-cluster/backend.tf" "modules/eks-cluster/remote_data.tf"
 BUCKET_NAME := $(shell echo $$TF_BUCKET_NAME)
+CLUSTER_NAME := $(or $(TF_VAR_cluster_name), development)
 
 init:
 	sed -i '' 's/your-bucket/$(BUCKET_NAME)/g' $(TARGET_FILE_PATH)
@@ -34,7 +35,7 @@ apply:
 	terraform -chdir=modules/eks-cluster apply --auto-approve
 
 deploy-application:
-	aws eks update-kubeconfig --name development --region us-east-1
+	aws eks update-kubeconfig --name $(CLUSTER_NAME) --region us-east-1
 	helm install hello-world-application hello-world-application
 
 destroy:

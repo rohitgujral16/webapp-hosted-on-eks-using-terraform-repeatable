@@ -57,7 +57,7 @@ module "eks" {
   }
 
   tags = {
-    Environment = "development"
+    Environment = var.cluster_name
   }
 }
 

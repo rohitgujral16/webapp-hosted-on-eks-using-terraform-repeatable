@@ -12,7 +12,7 @@ This repository aims to deploy:-
 | Name                                                                                                                                                                             | Version |
 |----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------|
 | <a name="requirement_aws"></a> [AWS account](https://aws.amazon.com/resources/create-account/)                                                                                   | Create  |
-| <a name="requirement_aws_cli"></a> [AWS CLI configured](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-quickstart.html#getting-started-quickstart-new-command) | 2.11.23 |
+| <a name="requirement_aws_cli"></a> [AWS CLI configured with IAM](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-quickstart.html#getting-started-quickstart-new-command) | 2.11.23 |
 | <a name="requirement_S3-bucket"></a> [S3 bucket](https://docs.aws.amazon.com/AmazonS3/latest/userguide/create-bucket-overview.html)                                              | Create  |
 | <a name="requirement_terraform"></a> [Terraform](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli)                                                | 1.4.7   |
 | <a name="requirement_kubectl"></a> [kubectl](https://kubernetes.io/docs/tasks/tools/)                                                                                            | 1.28.4  |
@@ -39,10 +39,11 @@ cd repo
 ```console
 export TF_BUCKET_NAME="<your-bucket-name>"
 ```
-3. (Optional) To avoid any conflicts if a vpc exist with same name/CIDR. If not it will pick default values
+3. (Optional) To avoid any conflicts if a vpc exist with same name/CIDR. If not it will pick [these default](https://github.com/rohitgujral16/webapp-hosted-on-eks-using-terraform-repeatable/blob/main/modules/vpc/variables.tf) values
 ```console
 export TF_VAR_vpc_name="<your-vpc-name>"
 export TF_VAR_vpc_cidr="<your-cidr>"
+export TF_VAR_cluster_name="<your-eks-clustername>"
 ```
 
 4. Initialise the terraform code
