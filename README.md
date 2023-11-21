@@ -7,7 +7,7 @@ This repository aims to deploy:-
 - Following best practices of IAC
 - Repeatable consistent apply and destroy of setup.
 
-## Prerequisites with versions used
+## Prerequisites - before you begin, please install/configure below
 
 | Name                                                                                                                                                                             | Version |
 |----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------|
@@ -28,7 +28,7 @@ This repository aims to deploy:-
 - Helm to deploy web application
 
 We will use Makefile to spin up the AWS infrastructure and deploy the application.
-You are encouraged to look into the contents of [Makefile](https://github.com/rohitgujral16/webapp-hosted-on-eks-using-terraform-repeatable/blob/main/Makefile)
+You are encouraged to look into the contents of [Makefile](Makefile)
 ## Deploying the application
 1. Clone this repository
 ```console
@@ -39,7 +39,7 @@ cd repo
 ```console
 export TF_BUCKET_NAME="<your-bucket-name>"
 ```
-3. (Optional) To avoid any conflicts if a vpc exist with same name/CIDR. If not it will pick [these default](https://github.com/rohitgujral16/webapp-hosted-on-eks-using-terraform-repeatable/blob/main/modules/vpc/variables.tf) values
+3. (Optional) To avoid any conflicts if a vpc exist with same name/CIDR. If not it will pick [these default](modules/vpc/variables.tf) values
 ```console
 export TF_VAR_vpc_name="<your-vpc-name>"
 export TF_VAR_vpc_cidr="<your-cidr>"
@@ -60,10 +60,14 @@ make deploy-application
 ```
 ## Validating and Accessing the application
 ```
-- You should be able to see a new Application Load balancer()ALB getting created on the console.
+- You should be able to see a new Application Load balancer(ALB) getting created on the console.
 - Wait for it to become active
+```
+[Local Image](images/ALB-active.png)
+```
 - Copy-paste the ALB in browser and you should be able to see the nginx application page
 ```
+[Local Image](images/webpage.png)
 
 ## Validate scaling via cluster autoscaler
 1. Check number on current nodes running
@@ -78,6 +82,7 @@ kubectl scale deployment hello-world-application --replicas=3
 ```console
 watch -n 1 -t kubectl get nodes
 ```
+[Local Image](images/Node-scaled-up.png)
 ## Destroy the complete infrasructure
 ```console
 make destroy
