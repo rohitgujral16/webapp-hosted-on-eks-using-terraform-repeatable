@@ -90,8 +90,9 @@ kubectl scale deployment hello-world-application --replicas=3
 ```console
 watch -n 1 -t kubectl get nodes
 ```
+```
 ![image](https://github.com/rohitgujral16/webapp-hosted-on-eks-using-terraform-repeatable/assets/40119930/8c14b143-d793-4c0a-a779-fd35f0150f96)
-
+```
 
 ## Destroy the complete infrasructure
 ```console
