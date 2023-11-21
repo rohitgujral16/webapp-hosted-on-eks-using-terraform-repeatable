@@ -61,14 +61,18 @@ make deploy-application
 ## Validating and Accessing the application
 ```
 - You should be able to see a new Application Load balancer(ALB) getting created on the console.
-- Wait for it to become active
+- Wait for it to become active (see below screenshot)
 ```
+
 ![image](https://github.com/rohitgujral16/webapp-hosted-on-eks-using-terraform-repeatable/assets/40119930/9a307b0c-cd3c-4570-b9f0-b8de5fdd290d)
+
 
 ```
 - Copy-paste the ALB in browser and you should be able to see the nginx application page
 ```
+
 ![image](https://github.com/rohitgujral16/webapp-hosted-on-eks-using-terraform-repeatable/assets/40119930/afc274bc-b73b-4ccb-88af-b8ab9c3c76b8)
+
 
 
 ## Validate scaling via cluster autoscaler
