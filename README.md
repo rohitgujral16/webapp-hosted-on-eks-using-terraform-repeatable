@@ -63,11 +63,13 @@ make deploy-application
 - You should be able to see a new Application Load balancer(ALB) getting created on the console.
 - Wait for it to become active
 ```
-[Local Image](images/ALB-active.png)
+![image](https://github.com/rohitgujral16/webapp-hosted-on-eks-using-terraform-repeatable/assets/40119930/9a307b0c-cd3c-4570-b9f0-b8de5fdd290d)
+
 ```
 - Copy-paste the ALB in browser and you should be able to see the nginx application page
 ```
-[Local Image](images/webpage.png)
+![image](https://github.com/rohitgujral16/webapp-hosted-on-eks-using-terraform-repeatable/assets/40119930/afc274bc-b73b-4ccb-88af-b8ab9c3c76b8)
+
 
 ## Validate scaling via cluster autoscaler
 1. Check number on current nodes running
@@ -82,7 +84,9 @@ kubectl scale deployment hello-world-application --replicas=3
 ```console
 watch -n 1 -t kubectl get nodes
 ```
-[Local Image](images/Node-scaled-up.png)
+![image](https://github.com/rohitgujral16/webapp-hosted-on-eks-using-terraform-repeatable/assets/40119930/8c14b143-d793-4c0a-a779-fd35f0150f96)
+
+
 ## Destroy the complete infrasructure
 ```console
 make destroy
