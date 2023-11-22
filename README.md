@@ -32,8 +32,8 @@ You are encouraged to look into the contents of [Makefile](Makefile)
 ## Deploying the application
 1. Clone this repository
 ```console
-git clone url
-cd repo
+git clone https://github.com/rohitgujral16/webapp-hosted-on-eks-using-terraform-repeatable.git
+cd webapp-hosted-on-eks-using-terraform-repeatable
 ```
 2. Export your s3 bucket name (this will be used as a remote backend for terraform)
 ```console
